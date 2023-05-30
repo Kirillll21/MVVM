@@ -12,7 +12,7 @@ namespace MVVM
         private Action<object> execute;
         private Func<object, bool> canExecute;
 
-        public event EventHandler CAnExecuteChanged
+        public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
@@ -33,4 +33,5 @@ namespace MVVM
             this.execute(parametr);
         }
     }
+
 }
