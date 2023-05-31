@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelloApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -45,15 +46,10 @@ namespace MVVM
                 OnPropertyChanged("Price");
             }
         }
-        public int Year
-        {
-            get { return phone.Year; }
-            set
-            {
-                phone.Year = value;
-                OnPropertyChanged("Year");
-            }
-        }
+        
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
         {

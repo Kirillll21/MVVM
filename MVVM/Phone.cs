@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-
-namespace MVVM
+namespace HelloApp
 {
     public class Phone : INotifyPropertyChanged
     {
         private string title;
         private string company;
         private int price;
-        private int year;
+        
+
+        public Phone(string title, string company, int price, int year)
+        {
+            this.title = title;
+            this.company = company;
+            this.price = price;
+            
+            
+        }
 
         public string Title
         {
@@ -43,15 +46,8 @@ namespace MVVM
                 OnPropertyChanged("Price");
             }
         }
-        public int Year
-        {
-            get { return year; }
-            set
-            {
-                year = value;
-                OnPropertyChanged("Year");
-            }
-        }
+        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
